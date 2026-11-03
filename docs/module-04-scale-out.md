@@ -1,7 +1,5 @@
 # Module 4 - Scale out
 
-TODO: CURL with_oasis_certs FROM SOMEWHERE
-
 **30 min**
 
 This module runs the same trijet analysis as before, however with three
@@ -19,18 +17,14 @@ of this module.
 
 From `~/vine-cms-analysis-stack/examples/tutorial_nd`, this module's script is
 `scripts/vr_trijet_condor.py` (`scripts/vr_trijet_condor_rdf.py` for
-RDataFrame); there is nothing to download.
+RDataFrame), which is already in place. The one thing to download is the
+certificate wrapper, `with_oasis_certs` (see [Certificates](#certificates)):
 
-You also need the certificate wrapper, `with_oasis_certs`, in
-`~/vine-cms-analysis-stack/examples/tutorial_nd/` (see [Certificates](#certificates)):
-
-!!! danger "TODO"
-    How students get `with_oasis_certs` is still to be decided. It isn't
-    published on GitHub. Once you have it:
-
-    ```bash
-    chmod +x with_oasis_certs
-    ```
+```bash
+cd ~/vine-cms-analysis-stack/examples/tutorial_nd
+curl -fLO https://raw.githubusercontent.com/cooperative-computing-lab/vine-cms-analysis-stack-tutorials/main/scripts/with_oasis_certs
+chmod +x with_oasis_certs
+```
 
 ## What changed in the script
 

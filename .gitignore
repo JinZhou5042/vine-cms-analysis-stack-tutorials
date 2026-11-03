@@ -233,3 +233,7 @@ vine-run-info/
 # Generated/downloaded data (regenerated locally, never committed)
 data/synthetic/
 data/real_scale/
+
+# Grid credentials: never commit a proxy or key
+proxy.pem
+*.pem
