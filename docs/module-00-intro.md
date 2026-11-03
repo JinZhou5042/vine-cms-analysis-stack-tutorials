@@ -2,8 +2,7 @@
 
 **15 min, lecture**
 
-!!! danger "TODO: slides link"
-    Link to the lecture slides goes here.
+[:material-file-pdf-box: Lecture slides (PDF)](https://github.com/cooperative-computing-lab/vine-cms-analysis-stack-tutorials/blob/main/slides/vine-cms-analysis-stack-module-00-intro.pdf){ .md-button }
 
 The slides carry the lecture; this page is rather the short version, meant
 for coming back to later.
