@@ -53,6 +53,7 @@ Environments made by pixi are essentially the same as the ones done with conda.
 === "Option A: conda"
 
     ```bash
+    unset PYTHONPATH
     conda env create -f environment.yml
     conda activate vine-cms-analysis-stack
     ```

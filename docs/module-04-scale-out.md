@@ -195,21 +195,23 @@ them.
 
     ```bash
     conda activate vine-cms-analysis-stack
-    vine_factory -T condor -C factory.json -E '--single-shot' \
+    vine_factory -T condor -C factory.json -E '--single-shot --connection-mode by_apparent_ip' \
       --wrapper ./with_oasis_certs --wrapper-input with_oasis_certs
     ```
 
 === "Option B: pixi"
 
     ```bash
-    pixi run vine_factory -T condor -C factory.json -E '--single-shot' \
+    pixi run vine_factory -T condor -C factory.json -E '--single-shot --connection-mode by_apparent_ip' \
       --wrapper ./with_oasis_certs --wrapper-input with_oasis_certs
     ```
 
 - `-T condor`: submit workers as HTCondor jobs.
 - `-C factory.json`: the configuration above.
-- `-E '--single-shot'`: passed on to every `vine_worker`, as in Module 3,
-  so that the worker exits as soon as its manager goes away.
+- `-E '--single-shot --connection-mode by_apparent_ip'`: passed on to every
+  `vine_worker`. `--single-shot`, as in Module 3, makes the worker exit as
+  soon as its manager goes away; `--connection-mode by_apparent_ip` makes it
+  connect to the manager's address as seen by the catalog.
 - `--wrapper ./with_oasis_certs --wrapper-input with_oasis_certs`: send the
   wrapper script along with each job, and start the worker through it
   (see [Certificates](#certificates) below).
@@ -227,7 +229,7 @@ cores: 4.000
 factory-timeout: 120 MB
 memory: 8000 MB
 disk: 16000 MB
-worker-extra-options: --single-shot
+worker-extra-options: --single-shot --connection-mode by_apparent_ip
 2026/09/14 11:09:42: |submitted: 0 |needed: 2 |waiting connection: 0 |requested: 2
 PROJECT            HOST                   PORT WAITING RUNNING COMPLETE WORKERS
 <netid>-trijet-tuto condorfe.crc.nd.edu   45697       5       0        0       0

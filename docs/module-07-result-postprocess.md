@@ -100,7 +100,7 @@ def accumulate_skims(a, b):
 before that result would be sent back:
 
 ```python
-SKIM_DIR = f"/project01/ndcms/users/{getpass.getuser()}/trijet-skims"
+SKIM_DIR = f"/project01/ndcms/{getpass.getuser()}/trijet-skims"
 
 def make_result_postprocess(skim_dir):
     def result_postprocess(skim):
@@ -258,14 +258,14 @@ mounts `/project01`, so Module 4's `factory.json` works as it is.
 
         ```bash
         conda activate vine-cms-analysis-stack
-        vine_factory -T condor -C factory.json -E '--single-shot' \
+        vine_factory -T condor -C factory.json -E '--single-shot --connection-mode by_apparent_ip' \
           --wrapper ./with_oasis_certs --wrapper-input with_oasis_certs
         ```
 
     === "Option B: pixi"
 
         ```bash
-        pixi run vine_factory -T condor -C factory.json -E '--single-shot' \
+        pixi run vine_factory -T condor -C factory.json -E '--single-shot --connection-mode by_apparent_ip' \
           --wrapper ./with_oasis_certs --wrapper-input with_oasis_certs
         ```
 
@@ -277,14 +277,14 @@ mounts `/project01`, so Module 4's `factory.json` works as it is.
 
         ```bash
         conda activate vine-cms-analysis-stack
-        CPATH=/usr/include vine_factory -T condor -C factory.json -E '--single-shot' \
+        CPATH=/usr/include vine_factory -T condor -C factory.json -E '--single-shot --connection-mode by_apparent_ip' \
           --wrapper ./with_oasis_certs --wrapper-input with_oasis_certs
         ```
 
     === "Option B: pixi"
 
         ```bash
-        CPATH=/usr/include pixi run vine_factory -T condor -C factory.json -E '--single-shot' \
+        CPATH=/usr/include pixi run vine_factory -T condor -C factory.json -E '--single-shot --connection-mode by_apparent_ip' \
           --wrapper ./with_oasis_certs --wrapper-input with_oasis_certs
         ```
 
@@ -303,7 +303,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
 
     <div class="term">
     TaskVine manager 'btovar-trijet-tutorial' listening on port 43775
-    skims will be written under /project01/ndcms/users/btovar/trijet-skims
+    skims will be written under /project01/ndcms/btovar/trijet-skims
     waiting for workers from your vine_factory...
     ...
     <span class="t-green">success             </span> processor skim/SingleMu_Run2012B_195842-196531 ...2-196531/file_2.root[50000:99449] (id=c37dc2d6) cores=1(1) memory_mb=315(2016) wall_time_s=1(0)
@@ -314,17 +314,17 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
     reductions [ <span class="t-green">██████████████████████████████</span> ]                    <span class="t-yellow">11</span>/<span class="t-red">0</span>/<span class="t-blue">11</span>
     events     [ <span class="t-green">██████████████████████████████</span> ] <span class="t-yellow">3736416</span>(<span class="t-green">3736416</span>)/<span class="t-red">0</span>/<span class="t-blue">3736416</span>
     datasets   [ <span class="t-green">██████████████████████████████</span> ]                        <span class="t-green">5</span>/<span class="t-cyan">5</span>
-     51491 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.d293f06c26b34a6881ef56cacb6479f4.parquet
-     78200 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.628e1ba07e4444edb3c4d91f3e73b974.parquet
-    104495 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.22bad5ac4d604a428acfe8cecb3fadca.parquet
-    101615 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.f29ed1a0abe944db967f5aaa56039250.parquet
-     20949 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.3baf79829f824684a95aed90c7f4bfff.parquet
-     21085 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.3f7e0817258a44b49ca1384db2c09200.parquet
-    105864 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.1a9f144626af4f4eb419cc4e42e77ad1.parquet
-     85146 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.bcf1498ba042400da20e05c8bcf0ef3e.parquet
-     29110 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.3dbcdfeebd3242a2b45106904efff75f.parquet
-     71729 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.e1e6b2219d0d4b3cba1fc6847e1a513d.parquet
-    106502 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.885b37f41b764cbbb7a3af8bf3e3821d.parquet
+     51491 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.d293f06c26b34a6881ef56cacb6479f4.parquet
+     78200 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.628e1ba07e4444edb3c4d91f3e73b974.parquet
+    104495 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.22bad5ac4d604a428acfe8cecb3fadca.parquet
+    101615 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.f29ed1a0abe944db967f5aaa56039250.parquet
+     20949 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.3baf79829f824684a95aed90c7f4bfff.parquet
+     21085 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.3f7e0817258a44b49ca1384db2c09200.parquet
+    105864 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.1a9f144626af4f4eb419cc4e42e77ad1.parquet
+     85146 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.bcf1498ba042400da20e05c8bcf0ef3e.parquet
+     29110 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.3dbcdfeebd3242a2b45106904efff75f.parquet
+     71729 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.e1e6b2219d0d4b3cba1fc6847e1a513d.parquet
+    106502 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.885b37f41b764cbbb7a3af8bf3e3821d.parquet
     11 final results, 776186 events in the skim
     </div>
 
@@ -344,7 +344,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
 
     <div class="term">
     TaskVine manager 'btovar-trijet-tutorial' listening on port 43775
-    skims will be written under /project01/ndcms/users/btovar/trijet-skims
+    skims will be written under /project01/ndcms/btovar/trijet-skims
     waiting for workers from your vine_factory...
     ...
     <span class="t-green">success             </span> processor skim/SingleMu_Run2012B_195842-196531 ...2-196531/file_2.root[50000:99449] (id=e90bb2a9) cores=1(1) memory_mb=881(2016) wall_time_s=7(0)
@@ -355,17 +355,17 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
     reductions [ <span class="t-green">██████████████████████████████</span> ]                    <span class="t-yellow">11</span>/<span class="t-red">0</span>/<span class="t-blue">11</span>
     events     [ <span class="t-green">██████████████████████████████</span> ] <span class="t-yellow">3736416</span>(<span class="t-green">3736416</span>)/<span class="t-red">0</span>/<span class="t-blue">3736416</span>
     datasets   [ <span class="t-green">██████████████████████████████</span> ]                        <span class="t-green">5</span>/<span class="t-cyan">5</span>
-     51491 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.87dd1353bb14470684ccf368d04a7db0.parquet
-     78200 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.d9e238285510447e9bc0658a7508ba5a.parquet
-     98205 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.253b21ea0c024132994b9070c7be72b5.parquet
-     27239 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.84e438e287ae4dc58c90a247733bc507.parquet
-    101616 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.4b1ce447a3cb482e9ecac5ae4c2a1518.parquet
-    105864 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.a91bf258aa7b4c3fb7f81cad86594243.parquet
-     21086 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.49c3ed3774804c8ba892b840b8e4804f.parquet
-     85146 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.d75589d1d3e24242be17082a013c47a2.parquet
-     29111 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.a2906dbe00cd4ac88425c4735b3f43f7.parquet
-     74400 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.5e8f8fa5d9314a31af54c22c20453151.parquet
-    103831 events -> /project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.06d2ffcf22594d159918439b879fc1ba.parquet
+     51491 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.87dd1353bb14470684ccf368d04a7db0.parquet
+     78200 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_193834-194270.d9e238285510447e9bc0658a7508ba5a.parquet
+     98205 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.253b21ea0c024132994b9070c7be72b5.parquet
+     27239 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.84e438e287ae4dc58c90a247733bc507.parquet
+    101616 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.4b1ce447a3cb482e9ecac5ae4c2a1518.parquet
+    105864 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.a91bf258aa7b4c3fb7f81cad86594243.parquet
+     21086 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194790-195398.49c3ed3774804c8ba892b840b8e4804f.parquet
+     85146 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.d75589d1d3e24242be17082a013c47a2.parquet
+     29111 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195399-195841.a2906dbe00cd4ac88425c4735b3f43f7.parquet
+     74400 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.5e8f8fa5d9314a31af54c22c20453151.parquet
+    103831 events -> /project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_195842-196531.06d2ffcf22594d159918439b879fc1ba.parquet
     11 final results, 776189 events in the skim
     </div>
 
@@ -411,7 +411,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
       "processor_name": "skim",
       "dataset_name": "SingleMu_Run2012B_194271-194789",
       "locator": {
-        "path": "/project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.22bad5ac4d604a428acfe8cecb3fadca.parquet",
+        "path": "/project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.22bad5ac4d604a428acfe8cecb3fadca.parquet",
         "events": 104495
       }
     }
@@ -447,7 +447,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
       "processor_name": "skim",
       "dataset_name": "SingleMu_Run2012B_194271-194789",
       "locator": {
-        "path": "/project01/ndcms/users/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.253b21ea0c024132994b9070c7be72b5.parquet",
+        "path": "/project01/ndcms/btovar/trijet-skims/SingleMu_Run2012B_194271-194789.253b21ea0c024132994b9070c7be72b5.parquet",
         "events": 98205
       }
     }
@@ -465,7 +465,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
     The skim itself is on shared storage. From the login node:
 
     ```bash
-    ls -lgo /project01/ndcms/users/$USER/trijet-skims/
+    ls -lgo /project01/ndcms/$USER/trijet-skims/
     ```
 
     ```
@@ -493,7 +493,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
     The skim itself is on shared storage. From the login node:
 
     ```bash
-    ls -lgo /project01/ndcms/users/$USER/trijet-skims/
+    ls -lgo /project01/ndcms/$USER/trijet-skims/
     ```
 
     ```
@@ -520,7 +520,7 @@ This time there are 83 chunks of up to 50,000 events, five datasets in all.
     Every run adds new files (new uuids) next to the old ones.
     `results/` is wiped at the start of each run, but
     `/project01/.../trijet-skims/` is not. Clean it up yourself between
-    attempts: `rm /project01/ndcms/users/$USER/trijet-skims/*.parquet`.
+    attempts: `rm /project01/ndcms/$USER/trijet-skims/*.parquet`.
 
 When you're done, stop the factory with Ctrl-C and check `condor_q`, as
 in [Module 4](module-04-scale-out.md#clean-up).
