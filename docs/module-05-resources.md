@@ -137,12 +137,6 @@ well past its limit. VineReduce reports such a kill as
     Any smaller `memory_mb` is therefore never the real limit. Declaring
     memory alone makes `memory_mb` the number that counts.
 
-For a reference pair from a real analysis, `vine-cms-analysis-stack`'s
-`examples/scale-cortado/vr_cortado.py` uses `resources_processor={"memory_mb":
-1000}` and `resources_reducer={"memory_mb": 8000}`. Skims are cheap per
-chunk but expensive to merge, so the reducer gets far more. This is a good
-reminder that the two limits need not look alike.
-
 ## Break it: a limit that is too small
 
 === "coffea"

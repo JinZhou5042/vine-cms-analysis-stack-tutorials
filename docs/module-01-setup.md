@@ -53,6 +53,7 @@ Environments made by pixi are essentially the same as the ones done with conda.
 === "Option A: conda"
 
     ```bash
+    unset PYTHONPATH
     conda env create -f environment.yml
     conda activate vine-cms-analysis-stack
     ```
@@ -83,7 +84,7 @@ data  README.md  scripts
 `scripts/` has one script per module, and `data/` has the dataset manifests
 described [below](#data-descriptions). Everything else you create today
 (`results/`, `checkpoints/`, `vine-run-info/`, `factory.json`, `plots/`)
-appears next to them. These are ignored by git.
+appears next to them.
 
 ## Verify
 
