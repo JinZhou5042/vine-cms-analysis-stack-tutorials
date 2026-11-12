@@ -139,7 +139,7 @@ Today's data is real CMS Open Data taken from the `Run2012B_SingleMu`.
 
 You need to be logged in `glados` or any `crc` frontend to see the data.
 
-- `data/datasets_vast.json` points at `/project01/ndcms/btovar/tutorial/tutorial/SingleMu_Run2012B/...`,
+- `data/datasets_vast.json` points at `/project01/ndcms/vinereduce-tutorial/SingleMu_Run2012B/...`,
   on the VAST filesystem that your login node mounts. Modules
   [2](module-02-local-distributor.md), [3](module-03-local-factory.md),
   [6](module-06-checkpoints-restart.md), and
@@ -166,15 +166,15 @@ head -22 data/datasets_vast.json
       "source": "Run2012B_SingleMu, CMS Open Data (IRIS-HEP ADL benchmark input), eospublic.cern.ch; first 3 files of this dataset's split; dataset name is an illustrative run-range label, not derived from these files' actual run numbers"
     },
     "files": {
-      "/project01/ndcms/btovar/tutorial/tutorial/SingleMu_Run2012B/SingleMu_Run2012B_193834-194270/file_0.root": {
+      "/project01/ndcms/vinereduce-tutorial/SingleMu_Run2012B/SingleMu_Run2012B_193834-194270/file_0.root": {
         "object_path": "Events",
         "num_entries": 53733
       },
-      "/project01/ndcms/btovar/tutorial/tutorial/SingleMu_Run2012B/SingleMu_Run2012B_193834-194270/file_1.root": {
+      "/project01/ndcms/vinereduce-tutorial/SingleMu_Run2012B/SingleMu_Run2012B_193834-194270/file_1.root": {
         "object_path": "Events",
         "num_entries": 222177
       },
-      "/project01/ndcms/btovar/tutorial/tutorial/SingleMu_Run2012B/SingleMu_Run2012B_193834-194270/file_2.root": {
+      "/project01/ndcms/vinereduce-tutorial/SingleMu_Run2012B/SingleMu_Run2012B_193834-194270/file_2.root": {
         "object_path": "Events",
         "num_entries": 395172
       }

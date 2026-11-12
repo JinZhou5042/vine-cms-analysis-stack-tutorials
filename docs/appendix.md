@@ -109,7 +109,7 @@ which manifest a script loads. The RDataFrame scripts read the very same
 files.
 
 1. **`data/datasets_vast.json`**: the files on VAST,
-   `/project01/ndcms/btovar/tutorial/tutorial/SingleMu_Run2012B/<dataset>/file_<i>.root`
+   `/project01/ndcms/vinereduce-tutorial/SingleMu_Run2012B/<dataset>/file_<i>.root`
    (absolute paths, readable by the `osguser` group). Modules
    [2](module-02-local-distributor.md), [3](module-03-local-factory.md),
    [6](module-06-checkpoints-restart.md), and
